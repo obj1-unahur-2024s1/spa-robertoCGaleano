@@ -1,0 +1,29 @@
+import personasDelSpa.*
+import Spa.*
+
+test "oliviaRecibeMasajes" {
+	var gradoDeConcentracion= olivia.gradoDeConcentracion()
+	olivia.recibeMasajes()
+	assert.that(olivia.gradoDeConcentracion() == gradoDeConcentracion + 3 )
+
+}
+test "oliviaDiscute"  {
+	var gradoDeConcentracion= olivia.gradoDeConcentracion()
+	olivia.discute()
+	assert.that(olivia.gradoDeConcentracion() == gradoDeConcentracion -1 )
+}
+
+test "brunoRecibeMasajes"	{
+	bruno.recibeMasajes()
+	assert.that(bruno.esFeliz())
+}
+
+test "brunoBañoDeVapor"	{
+	var peso= bruno.peso()
+	bruno.banioDeVapor()
+	assert.that(bruno.peso() == peso-500 and bruno.tieneSed() )
+}
+test "brunoTomaAgua"	{
+	bruno.tomaAgua()
+	assert.notThat(bruno.tieneSed())
+}
